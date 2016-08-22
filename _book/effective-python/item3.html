@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Item3 | Talk is cheap, show me the code.</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../effective-python/item4.html" />
+    
+    
+    <link rel="prev" href="../effective-python/item2.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.3"
+        data-chapter-title="Item3"
+        data-filepath="effective-python/item3.md"
+        data-basepath=".."
+        data-revision="Mon Aug 22 2016 15:06:44 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="effective-python.html">
+            
+            <span><b>1.</b> Effective Python</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="effective-python/item1.html">
+            
+                
+                    <a href="../effective-python/item1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Item1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="effective-python/item2.html">
+            
+                
+                    <a href="../effective-python/item2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Item2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="effective-python/item3.html">
+            
+                
+                    <a href="../effective-python/item3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Item3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="effective-python/item4.html">
+            
+                
+                    <a href="../effective-python/item4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Item4
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Talk is cheap, show me the code.</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x4E86;&#x89E3;bytes-str-&#x548C;-unicode&#x7684;&#x533A;&#x522B;">&#x4E86;&#x89E3;bytes, str &#x548C; unicode&#x7684;&#x533A;&#x522B;</h1>
+<p>&#x5173;&#x4E8E;&#x7F16;&#x7801;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x786E;&#x5B9E;&#x5F88;&#x8BA9;&#x4EBA;&#x5934;&#x75DB;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x80FD;&#x90FD;&#x53EA;&#x662F;&#x67E5;&#x67E5;&#x8D44;&#x6599;&#xFF0C;&#x7136;&#x540E;&#x62F7;&#x8D1D;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x575A;&#x4FE1;First principle&#x7684;&#x601D;&#x7EF4;&#xFF0C;&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;&#x603B;&#x662F;&#x8981;&#x4ECE;&#x6839;&#x4E0A;&#x53BB;&#x601D;&#x8003;&#xFF0C;&#x518D;&#x4E00;&#x5C42;&#x5C42;&#x5EFA;&#x6784;&#x8BA4;&#x77E5;&#xFF0C;&#x53EF;&#x80FD;&#x624D;&#x4F1A;&#x83B7;&#x5F97;&#x771F;&#x77E5;&#xFF0C;&#x53EF;&#x80FD;&#x5F00;&#x59CB;&#x6709;&#x8FD9;&#x4E48;&#x51E0;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x6211;&#x4EEC;&#x770B;&#x5230;&#x7684;&#x5B57;&#x6BCD;A&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x600E;&#x4E48;&#x8BC6;&#x522B;&#x51FA;&#x6765;&#x7684;&#xFF1F;</li>
+<li>&#x8BA1;&#x7B97;&#x673A;&#x4F20;&#x8F93;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x5B57;&#xFF0C;&#x5BF9;&#x4E8E;&#x5C4F;&#x5E55;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x628A;&#x591A;&#x957F;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x591A;&#x5927;&#x7684;&#x6570;&#x5B57;&#x5BF9;&#x5E94;&#x6210;&#x67D0;&#x4E2A;&#x5B57;&#x6BCD;&#xFF1F;</li>
+</ol>
+<h1 id="ascii">ASCII</h1>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x8FD9;&#x73A9;&#x610F;&#x662F;&#x7F8E;&#x56FD;&#x4EBA;&#x53D1;&#x660E;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x90A3;&#x6700;&#x5F00;&#x59CB;&#x5C31;&#x7528;8-bit&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x8282;(byte)&#x6765;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x4E5F;&#x6CA1;&#x6709;&#x7528;&#x5230;&#x90A3;&#x4E48;&#x591A;&#xFF0C;&#x5C31;&#x7528;&#x4E86;7-bit&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4ECE;0~127&#x6765;&#x8868;&#x793A;&#x6240;&#x6709;&#x7684;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#x554A;&#xFF0C;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x554A;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x4E2A;&#x7CFB;&#x7EDF;&#x88AB;&#x79F0;&#x4E3A;ASCII(&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x662F;American &#x8FD9;&#x662F;&#x7F8E;&#x56FD;&#x4EBA;&#x5236;&#x5B9A;&#x7684;&#x6807;&#x51C6;)&#x3002;</p>
+<p>&#x968F;&#x540E;&#x95EE;&#x9898;&#x5C31;&#x6765;&#x4E86;&#xFF1A;</p>
+<p>na&#xEF;ve&#x6216;&#x8005;caf&#xE9; &#x8FD9;&#x6837;&#x4ECE;&#x6CD5;&#x56FD;&#x7B49;&#x897F;&#x8BED;&#x56FD;&#x5BB6;&#x6765;&#x7684;&#x8BCD;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x76F4;&#x63A5;&#x5199;&#x6210;cafe&#xFF0C;&#x6CD5;&#x56FD;&#x4EBA;&#x771F;&#x662F;&#x4E0D;&#x613F;&#x610F;&#x554A;</p>
+<h1 id="code-page&#x65F6;&#x4EE3;">Code Page&#x65F6;&#x4EE3;</h1>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x5F88;&#x81EA;&#x7136;&#xFF0C;8-bit&#x53EA;&#x7528;&#x4E86;128&#x4E2A;&#xFF0C;&#x8FD8;&#x6709;128&#x6CA1;&#x7528;&#x5462;&#xFF0C;&#x5E72;&#x8106;&#x76F4;&#x63A5;&#x7528;&#x4E86;&#x3002;&#x6BD4;&#x5982;&#x5E0C;&#x4F2F;&#x6765;&#x8BED;&#x6765;&#x4E00;&#x5957;&#xFF0C;&#x6CD5;&#x8BED;&#x6765;&#x4E00;&#x5957;....&#x56E0;&#x6B64;&#x56FD;&#x9645;&#x4E0A;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x516C;&#x53F8;&#x51FA;&#x4E86;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x7248;&#x672C;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x50CF;&#x6BCF;&#x4EBA;&#x624B;&#x91CC;&#x90FD;&#x6709;&#x4E00;&#x4E2A;code page&#xFF0C;&#x6765;&#x67E5;&#x770B;&#x67D0;&#x4E2A;byte&#x5230;&#x5E95;&#x5BF9;&#x5E94;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x95EE;&#x9898;&#x53C8;&#x6765;&#x4E86;&#xFF1A;</p>
+<p>&#x5404;&#x5BB6;&#x6709;&#x5404;&#x5BB6;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x90A3;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4ECE;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x8DD1;&#x5230;&#x53E6;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#xFF0C;&#x5C82;&#x4E0D;&#x662F;&#x90FD;&#x4E71;&#x6389;&#x4E86;&#xFF1F;&#x5176;&#x6B21;&#x5982;&#x679C;&#x4E00;&#x7BC7;&#x6587;&#x6863;&#x4E2D;&#x95F4;&#x65E2;&#x6709;&#x6CD5;&#x8BED;&#x53C8;&#x6709;&#x5E0C;&#x4F2F;&#x6765;&#x8BED;&#xFF0C;&#x8BA1;&#x7B97;&#x673A;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x6700;&#x540E;&#x50CF;&#x4E2D;&#x6587;&#x8FD9;&#x6837;&#x590D;&#x6742;&#x7684;&#x4E1C;&#x65B9;&#x8BED;&#x8A00;&#xFF0C;&#x5C82;&#x662F;200&#x591A;&#x4E2A;&#x6570;&#x5B57;&#x80FD;&#x591F;&#x8868;&#x793A;&#x5B8C;&#x7684;&#x3002;</p>
+<h1 id="unicode-&#x547C;&#x4E4B;&#x6B32;&#x51FA;">Unicode &#x547C;&#x4E4B;&#x6B32;&#x51FA;</h1>
+<p>1980&#x5E74;&#x5DE6;&#x53F3;&#xFF0C;&#x56FD;&#x9645;&#x4E0A;&#x641E;&#x51FA;&#x4E86;unicode&#x6982;&#x5FF5;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x5C31;&#x662F;&#x8981;&#x628A;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x8BED;&#x8A00;&#x548C;&#x6587;&#x5B57;&#x7EB3;&#x5165;&#x5230;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#xFF0C;&#x5F00;&#x59CB;&#x4ECE;1&#x4E2A;byte&#x6269;&#x5C55;&#x5230;2&#x4E2A;byte&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6709;65&#xFF0C;536&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#xFF0C;&#x6700;&#x540E;&#x8FD8;&#x4E0D;&#x591F;&#x53C8;&#x589E;&#x52A0;&#x4E86;&#x51E0;&#x4E2A;bit&#x76F4;&#x63A5;&#x5230;&#x80FD;&#x8868;&#x793A;1&#x767E;&#x4E07;&#x5DE6;&#x53F3;&#x7684;&#x5B57;&#x7B26;&#xFF08;&#x4F5C;&#x4E3A;&#x5BF9;&#x6BD4;&#xFF0C;&#x6C49;&#x5B57;&#x7684;&#x4E2A;&#x6570;&#x5927;&#x6982;&#x662F;6&#x4E07;&#x591A;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x8FD9;&#x4E48;&#x591A;&#x6570;&#x5B57;&#x80AF;&#x5B9A;&#x53EF;&#x4EE5;&#x56CA;&#x62EC;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x95EE;&#x9898;&#x53C8;&#x6765;&#x4E86;&#xFF1A;</p>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x5B58;&#x50A8;&#x7684;&#x5C31;&#x662F;0&#x6216;&#x8005;1&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x4E00;&#x8FDE;&#x4E32;&#x6570;&#x5B57; 11010110... &#x5230;&#x5E95;&#x5BF9;&#x5E94;&#x4EC0;&#x4E48;&#x5B57;&#x7B26;&#x5462;&#xFF1F;</p>
+<h1 id="utf16&#x7B49;&#x7F16;&#x7801;&#x683C;&#x5F0F;">UTF-16&#x7B49;&#x7F16;&#x7801;&#x683C;&#x5F0F;</h1>
+<p>&#x6700;&#x76F4;&#x89C9;&#x6027;&#x7684;&#x601D;&#x7EF4;&#x662F;&#xFF1A;&#x90A3;&#x6211;&#x5C31;&#x53D6;&#x4E00;&#x4E2A;&#x5B9A;&#x957F;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#xFF0C;&#x6BD4;&#x5982;16&#x4F4D;&#xFF08;&#x6B64;&#x65F6;&#x8BA1;&#x7B97;&#x673A;&#x5DF2;&#x7ECF;&#x9AD8;&#x901F;&#x53D1;&#x5C55;&#xFF09;&#xFF0C;&#x548C;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x505A;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF08;&#x8FD9;&#x4E2A;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF0C;&#x6709;unicode&#x6765;&#x7EF4;&#x62A4;&#xFF09;&#xFF0C;&#x90A3;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x5C31;&#x6709;&#x552F;&#x4E00;&#x4E00;&#x4E2A;16&#x4F4D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x5BF9;&#x5E94;&#x3002;&#x8FD9;&#x95EE;&#x9898;&#x4E0D;&#x5C31;&#x89E3;&#x51B3;&#x4E86;&#x5417;&#xFF1F;&#x8FD9;&#x5C31;&#x662F;&#x65E9;&#x671F;&#x7684;UTF-16&#x7684;&#x601D;&#x60F3;&#x3002;</p>
+<p>&#x95EE;&#x9898;&#x8FD8;&#x662F;&#x53C8;&#x6765;&#x4E86;&#xFF1A;</p>
+<p>&#x5BF9;&#x4E8E;:</p>
+<pre><code>Hello
+</code></pre><p>&#x8FD9;&#x6837;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x4E5F;&#x8981;&#x7528;16&#x4F4D;&#x6765;&#x8868;&#x793A;&#xFF1F;&#x90A3;&#x5FC5;&#x7136;&#x6709;&#x5F88;&#x591A;&#x4F4D;&#x90FD;&#x662F;0&#x554A;&#xFF0C;&#x8FD9;&#x6837;&#x5C82;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x5360;&#x7A7A;&#x95F4;&#xFF0C;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x4E5F;&#x8D39;&#x52B2;&#x554A;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x73B0;&#x5728;&#x5DF2;&#x6709;&#x7684;ASCII&#x7F16;&#x7801;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x505A;&#x5230;&#x5411;&#x4E0B;&#x517C;&#x5BB9;&#xFF08;&#x770B;&#x6765;&#x90A3;&#x65F6;&#x5019;&#x7684;&#x79D1;&#x5B66;&#x5BB6;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x610F;&#x8BC6;&#x5230;&#x65E9;&#x671F;&#x81EA;&#x5DF1;&#x6316;&#x7684;&#x5751;&#x4E86;&#xFF09;</p>
+<h1 id="utf8&#x7F16;&#x7801;&#x6807;&#x51C6;">UTF-8&#x7F16;&#x7801;&#x6807;&#x51C6;</h1>
+<p>UTF-8 &#x4E00;&#x952E;&#x5F0F;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x4E0D;&#x770B;&#x7EC6;&#x8282;&#xFF0C;&#x4F9D;&#x7136;&#x7528;&#x4E00;&#x4E2A;byte&#x4E00;&#x4E2A;byte&#x6765;&#x8868;&#x793A;&#x5B57;&#x7B26;&#xFF0C;&#x90A3;&#x6709;&#x4EBA;&#x5C31;&#x8BF4;&#x4E86;&#xFF0C;&#x90A3;&#x4E0D;&#x5C31;&#x53EA;&#x80FD;&#x8868;&#x793A;256&#x4E2A;&#x5B57;&#x7B26;&#x5417;&#xFF1F;&#x8FD9;&#x4E2D;&#x95F4;&#x6709;&#x4E2A;&#x5C0F;&#x6280;&#x5DE7;&#xFF0C;&#x5C31;&#x662F;&#x7528;&#x7279;&#x6B8A;&#x7684;byte&#x6765;&#x8868;&#x793A;&#x7528;&#x51E0;&#x4E2A;byte&#x5171;&#x540C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x54C8;&#x54C8;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7EDD;&#x5999;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x6B63;&#x56E0;&#x4E3A;&#x6709;&#x4E86;&#x8FD9;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x517C;&#x5BB9;&#x4E4B;&#x524D;ASCII&#x7684;&#x6587;&#x4EF6;&#x5C31;&#x7528;&#x4E00;&#x4E2A;byte&#x800C;&#x5176;&#x4ED6;&#x6587;&#x5B57;&#x5C31;&#x7075;&#x6D3B;&#x8C03;&#x6574;&#xFF0C;&#x53EF;&#x957F;&#x53EF;&#x77ED;&#xFF0C;&#x602A;&#x4E0D;&#x5F97;&#x6700;&#x540E;UTF&#xFF0D;8&#x6D41;&#x884C;&#x8D77;&#x6765;&#x4E86;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x56DE;&#x5230;&#x6B63;&#x9898;&#xFF0C;python2&#x4E2D;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x8868;&#x793A;&#x4E00;&#x4E32;&#x5B57;&#x7B26;&#xFF1A;</p>
+<ul>
+<li>str: &#x662F;&#x6240;&#x8C13;&#x7684;8-bit&#x5B57;&#x7B26;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x6240;&#x6709;&apos;&apos;, &quot;&quot;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x662F;ASCII&#x7F16;&#x7801;&#x7684;</li>
+<li>unicode: &#x662F;unicode&#x5B57;&#x7B26;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x7528;u&apos;&apos;&#x8868;&#x793A;</li>
+</ul>
+<p>&#x5BF9;&#x5E94;python3&#x5BF9;&#x5E94;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;:</p>
+<ul>
+<li>bytes: &#x662F;&#x6240;&#x8C13;&#x7684;8-bit, &#x5BF9;&#x5E94;python2&#x4E2D;&#x7684;str</li>
+<li>str:   &#x90FD;&#x662F;unicode&#xFF0C;&#x5BF9;&#x5E94;python2&#x4E2D;&#x7684;unicode</li>
+</ul>
+<p>&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;Django&#x4E2D;&#x662F;&#x8FD9;&#x6837;&#x5199;&#x7684;&#x4E86;&#xFF1A;</p>
+<pre><code>def __unicode__():  # python2
+    pass
+
+def __str__():  # python3
+    pass
+</code></pre><p>&#x5BF9;&#x5E94;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># python2</span>
+a = <span class="hljs-string">u&apos;&#x4F60;&#x597D;&#xFF0C;&#x4E16;&#x754C;&apos;</span>
+a.encode(<span class="hljs-string">&apos;utf-8&apos;</span>)  <span class="hljs-comment"># &#x8F6C;&#x6362;&#x6210; 8-bit byte&#x5F62;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;python2&#x4E2D;&#x7684;str</span>
+
+<span class="hljs-comment"># python3</span>
+a = <span class="hljs-string">&apos;&#x4F60;&#x597D;&#xFF0C;&#x4E16;&#x754C;&apos;</span>
+a.encode(<span class="hljs-string">&apos;utf-8&apos;</span>)  <span class="hljs-comment"># &#x8F6C;&#x6362;&#x6210; 8-bit byte&#x5F62;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;python3&#x4E2D;&#x7684;bytes</span>
+
+<span class="hljs-comment"># python2</span>
+a = <span class="hljs-string">&apos;\xe4\xbd&apos;</span>
+a.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)  <span class="hljs-comment"># &#x8F6C;&#x6362;&#x6210;utf-8&#x7F16;&#x7801;&#x7684;unicode&#x5F62;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;python2&#x4E2D;&#x7684;unicode&#x5F62;&#x5F0F;</span>
+
+
+<span class="hljs-comment"># python3</span>
+a = <span class="hljs-string">b&apos;\xe4\xbd&apos;</span>
+a.decode(<span class="hljs-string">&apos;utf-8&apos;</span>)  <span class="hljs-comment"># &#x8F6C;&#x6362;&#x6210;utf-8&#x7F16;&#x7801;&#x7684;unicode&#x5F62;&#x5F0F;&#x3002;&#x4E5F;&#x5C31;&#x662F;python3&#x4E2D;&#x7684;str&#x5F62;&#x5F0F;</span>
+</code></pre>
+<h1 id="&#x6CE8;&#x610F;">&#x6CE8;&#x610F;</h1>
+<p>Python2&#x4E2D;unicode&#x548C;&#x4E00;&#x822C;&#x7684;str&#x5F62;&#x5F0F;&#x53EA;&#x8981;&#x4E0D;&#x8D85;&#x8FC7;7&#x4F4D;&#x7684;&#x5B57;&#x7B26;&#x90FD;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#xFF1A;&#x76F8;&#x52A0;&#xFF0C;&#x6BD4;&#x8F83;&#x7B49;&#xFF0C;&#x4F46;&#x662F;python3&#x4E2D;bytes&#x548C;str&#x533A;&#x5206;&#x7684;&#x5F88;&#x6E05;&#x695A;&#xFF0C;&#x6CFE;&#x6E2D;&#x5206;&#x660E;&#x3002;</p>
+<h1 id="&#x60F3;&#x6CD5;">&#x60F3;&#x6CD5;</h1>
+<p>&#x4EE5;&#x540E;&#x5BF9;&#x4E8E;python&#x4E2D;&#x62A5;&#x6709;&#x5173;unicode&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7406;&#x667A;&#x601D;&#x8003;&#x5176;&#x4E2D;&#x5230;&#x5E95;&#x5B58;&#x5728;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x4ECE;&#x6700;&#x672C;&#x8D28;&#x601D;&#x8003;&#x95EE;&#x9898;&#xFF0C;&#x4E4B;&#x540E;&#x9047;&#x5230;&#x6B64;&#x7C7B;&#x95EE;&#x9898;&#xFF0C;&#x624D;&#x80FD;&#x907F;&#x514D;&#x6D6A;&#x8D39;&#x4E00;&#x6B21;&#x5E26;&#x5BBD;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../effective-python/item2.html" class="navigation navigation-prev " aria-label="Previous page: Item2"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../effective-python/item4.html" class="navigation navigation-next " aria-label="Next page: Item4"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

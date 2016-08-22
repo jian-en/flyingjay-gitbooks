@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Item4 | Talk is cheap, show me the code.</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../effective-python/item3.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.4"
+        data-chapter-title="Item4"
+        data-filepath="effective-python/item4.md"
+        data-basepath=".."
+        data-revision="Mon Aug 22 2016 15:06:44 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="effective-python.html">
+            
+            <span><b>1.</b> Effective Python</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="effective-python/item1.html">
+            
+                
+                    <a href="../effective-python/item1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Item1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="effective-python/item2.html">
+            
+                
+                    <a href="../effective-python/item2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Item2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="effective-python/item3.html">
+            
+                
+                    <a href="../effective-python/item3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Item3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="effective-python/item4.html">
+            
+                
+                    <a href="../effective-python/item4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Item4
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Talk is cheap, show me the code.</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x4F7F;&#x7528;&#x8F85;&#x52A9;&#x6027;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x8F85;&#x52A9;&#x6027;&#x65B9;&#x6CD5;</h1>
+<p>Python&#x7684;&#x7B80;&#x6D01;&#x6027;&#x5E38;&#x5E38;&#x4F1A;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x76F4;&#x63A5;&#x5199;&#x51FA;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x89E3;&#x51B3;&#x5F88;&#x591A;&#x903B;&#x8F91;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x770B;&#x4E0A;&#x53BB;&#x5341;&#x5206;&#x72C2;&#x6293;&#x9177;&#x70AB;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x5BF9;&#x4E8E;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;readability&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x5927;&#x7684;&#x4F24;&#x5BB3;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x7528;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x7684;&#x4F8B;&#x5B50;&#x9610;&#x91CA;&#xFF0C;&#x600E;&#x4E48;&#x8FDB;&#x884C;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x91CD;&#x6784;&#x3002;</p>
+<h1 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;">&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h1>
+<p>&#x4ECE;url&#x4E2D;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x4E00;&#x4E2A;&#x5F62;&#x5982;&apos;red=5&amp;blue=7&amp;green=&apos;&#x7684;&#x53C2;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;rgb&#x989C;&#x8272;&#x67E5;&#x8BE2;&#x9700;&#x8981;&#x4EE3;&#x7801;&#x51C6;&#x786E;&#x89E3;&#x6790;&#x51FA;red&#xFF0C;blue&#xFF0C;green&#x7684;&#x503C;&#x5206;&#x522B;&#x662F;&#x591A;&#x5C11;&#xFF1F;</p>
+<h1 id="&#x7B2C;&#x4E00;&#x7248;&#x4EE3;&#x7801;">&#x7B2C;&#x4E00;&#x7248;&#x4EE3;&#x7801;</h1>
+<p>&#x76F4;&#x63A5;&#x4F7F;&#x7528;<strong>urlparse</strong>&#x5305;&#x4E2D;&#x7684;<strong>parse_qs</strong>&#x65B9;&#x6CD5;, &#x76F4;&#x63A5;&#x83B7;&#x53D6;&#x5373;&#x53EF;, &#x4E3A;&#x7EDF;&#x4E00;&#x8D77;&#x89C1;&#xFF0C;&#x5747;&#x91C7;&#x7528;python2&#x5199;&#x6CD5;&#xFF0C;python3&#x4E2D;&#x7684;parse_qs&#x65B9;&#x6CD5;&#x4ECE;urllib.parse&#x4E2D;&#x5F15;&#x5165;,print&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x6539;&#x9020;.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> urlparse <span class="hljs-keyword">import</span> parse_qs
+<span class="hljs-comment"># from urllib.parse import parse_qs # python3</span>
+my_values = parse_qs(qs, keep_blank_values=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x4FDD;&#x7559;&#x7A7A;&#x503C;</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Red&apos;</span>, my_values.get(<span class="hljs-string">&apos;red&apos;</span>)
+<span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Green&apos;</span>, my_values.get(<span class="hljs-string">&apos;green&apos;</span>)
+<span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Opacity&apos;</span>, my_values.get(<span class="hljs-string">&apos;opacity&apos;</span>)
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Red [<span class="hljs-string">&apos;5&apos;</span>]
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Green [<span class="hljs-string">&apos;&apos;</span>]
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Opacity <span class="hljs-keyword">None</span>
+</code></pre>
+<p>&#x95EE;&#x9898;&#x5F88;&#x660E;&#x663E;, &#x5982;&#x679C;&#x4E0D;&#x4F20;&#x9012;&#x67D0;&#x79CD;&#x989C;&#x8272;&#x7684;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x5E0C;&#x671B;&#x5B83;&#x662F;0&#xFF0C;&#x800C;&#x4E0D;&#x662F;None&#x6216;&#x8005;[&apos;&apos;], &#x90A3;&#x81EA;&#x7136;&#x5C31;&#x60F3;&#x5230;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F20;&#x4E86;[&apos;&apos;]&#x7684;&#x6570;&#x7EC4;&#x9700;&#x8981;&#x628A;&#x6570;&#x7EC4;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x53D6;&#x51FA;&#x6765;&#x505A;&#x5224;&#x65AD;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x7528;&#x4E0A;&#x4E86;<strong>or</strong>&#x8FD9;&#x6837;&#x65B9;&#x4FBF;&#x7684;&#x5173;&#x952E;&#x8BCD;.</p>
+<h1 id="&#x589E;&#x52A0;&#x9ED8;&#x8BA4;&#x503C;">&#x589E;&#x52A0;&#x9ED8;&#x8BA4;&#x503C;</h1>
+<pre><code class="lang-python">red = my_values.get(<span class="hljs-string">&apos;red&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+green = my_values.get(<span class="hljs-string">&apos;green&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+opacity = my_values.get(<span class="hljs-string">&apos;opacity&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Red <span class="hljs-string">&apos;5&apos;</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Green <span class="hljs-number">0</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Opacity <span class="hljs-number">0</span>
+</code></pre>
+<p>Hooray, &#x6240;&#x6709;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x90FD;&#x52A0;&#x4E0A;&#x4E86;,&#x4F46;&#x662F;&#x4EE3;&#x7801;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x95EE;&#x9898;&#x3002;&#x5C31;&#x662F;Red&#x7684;&#x503C;&#x662F;&apos;5&apos;, &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;integer&#x7C7B;&#x578B;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x505A;&#x4E4B;&#x540E;&#x7684;&#x8FD0;&#x7B97;&#x3002;</p>
+<h1 id="&#x7EDF;&#x4E00;&#x8F93;&#x51FA;&#x683C;&#x5F0F;">&#x7EDF;&#x4E00;&#x8F93;&#x51FA;&#x683C;&#x5F0F;</h1>
+<pre><code class="lang-python">red = int(my_values.get(<span class="hljs-string">&apos;red&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>)
+green = int(my_values.get(<span class="hljs-string">&apos;green&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>)
+opacity = int(my_values.get(<span class="hljs-string">&apos;opacity&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])[<span class="hljs-number">0</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>)
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Red <span class="hljs-number">5</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Green <span class="hljs-number">0</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Opacity <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x597D;&#x7684;&#xFF0C;&#x95EE;&#x9898;&#x5DF2;&#x7ECF;&#x89E3;&#x51B3;&#x4E86;&#x3002;&#x5927;&#x529F;&#x544A;&#x6210;&#x4E86;&#xFF01;&#x4F46;&#x662F;&#x4E0D;&#x8981;&#x6025;&#xFF0C;&#x73B0;&#x5728;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x679C;&#x627E;&#x53E6;&#x4E00;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x8FC7;&#x6765;&#x770B;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x7ED3;&#x679C;&#x662F;&#xFF1A;&#x6211;&#x4E0D;&#x77E5;&#x9053;&#x8FD9;&#x4E9B;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;&#xFF1F;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x53EF;&#x8BFB;&#x6027;&#x592A;&#x5DEE;&#xFF01;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x662F;&#x8BE5;&#x547C;&#x5524;&#x91CD;&#x6784;&#x4E86;&#xFF01;</p>
+<h1 id="&#x7528;ifelse&#x8FDB;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x91CD;&#x6784;">&#x7528;if...else...&#x8FDB;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x91CD;&#x6784;</h1>
+<pre><code class="lang-python">red = my_values.get(<span class="hljs-string">&apos;red&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])
+red = int(red[<span class="hljs-number">0</span>]) <span class="hljs-keyword">if</span> red[<span class="hljs-number">0</span>] <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>
+
+green = my_values.get(<span class="hljs-string">&apos;green&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])
+green = int(green[<span class="hljs-number">0</span>]) <span class="hljs-keyword">if</span> green[<span class="hljs-number">0</span>] <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>
+
+opacity = my_values.get(<span class="hljs-string">&apos;opacity&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])
+opacity = int(opacity[<span class="hljs-number">0</span>]) <span class="hljs-keyword">if</span> opacity[<span class="hljs-number">0</span>] <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>
+
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Red <span class="hljs-number">5</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Green <span class="hljs-number">0</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Opacity <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x7684;&#x91CD;&#x6784;&#x5C3D;&#x91CF;&#x4FDD;&#x8BC1;&#x6D4B;&#x8BD5;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#xFF0C;&#x5426;&#x5219;&#x6211;&#x4EEC;&#x4E0D;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x662F;&#x5426;&#x6CBF;&#x7740;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5411;&#x524D;&#x8FDB;&#x3002;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x4E86;<strong>if...else</strong>&#x8BED;&#x53E5;&#x66FF;&#x4EE3;<strong>or</strong>&#x8FD9;&#x6837;&#x751F;&#x786C;&#x7684;&#x903B;&#x8F91;&#xFF08;&#x6C38;&#x8FDC;&#x8BB0;&#x7740;&#x4EE3;&#x7801;&#x8D8A;&#x63A5;&#x8FD1;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x8D8A;&#x6709;&#x53EF;&#x8BFB;&#x6027;&#xFF09;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x4E2D;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x5355;&#x884C;&#x7684;if...else&#x8BED;&#x53E5;&#x5176;&#x5B9E;&#x4F1A;&#x727A;&#x7272;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x90A3;&#x597D;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x4E00;&#x6B21;&#xFF0C;&#x628A;&#x5B83;&#x53D8;&#x6210;&#x591A;&#x884C;&#x3002;</p>
+<h1 id="&#x591A;&#x884C;ifelse&#x518D;&#x91CD;&#x6784;&#x4E00;&#x6B21;">&#x591A;&#x884C;if...else...&#x518D;&#x91CD;&#x6784;&#x4E00;&#x6B21;</h1>
+<pre><code class="lang-python">red = my_values.get(<span class="hljs-string">&apos;red&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])
+<span class="hljs-keyword">if</span> red[<span class="hljs-number">0</span>]:
+    red = int(red[<span class="hljs-number">0</span>])
+<span class="hljs-keyword">else</span>:
+    red = <span class="hljs-number">0</span>
+
+green = my_values.get(<span class="hljs-string">&apos;green&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])
+<span class="hljs-keyword">if</span> green[<span class="hljs-number">0</span>]:
+    green = int(green[<span class="hljs-number">0</span>])
+<span class="hljs-keyword">else</span>:
+    green = <span class="hljs-number">0</span>
+
+opacity = my_values.get(<span class="hljs-string">&apos;opacity&apos;</span>, [<span class="hljs-string">&apos;&apos;</span>])
+<span class="hljs-keyword">if</span> opacity[<span class="hljs-number">0</span>]:
+    opacity = int(opacity[<span class="hljs-number">0</span>])
+<span class="hljs-keyword">else</span>:
+    opacity = <span class="hljs-number">0</span>
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Red <span class="hljs-number">5</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Green <span class="hljs-number">0</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Opacity <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x662F;&#x4E0D;&#x662F;&#x7A81;&#x7136;&#x611F;&#x89C9;&#x6E05;&#x695A;&#x591A;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x95EE;&#x9898;&#x5F88;&#x660E;&#x663E;&#x3002;&#x65B9;&#x6CD5;&#x592A;&#x957F;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x592A;&#x5F31;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x989C;&#x8272;&#x6807;&#x8BC6;&#xFF0C;&#x53C8;&#x5F97;&#x591A;&#x52A0;5&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x79C9;&#x627F;Do not Repeat Yourself&#x7684;&#x539F;&#x5219;&#xFF0C;&#x628A;&#x76F8;&#x4F3C;&#x4EE3;&#x7801;&#x62BD;&#x79BB;&#x51FA;&#x6765;&#x3002;</p>
+<h1 id="&#x4F7F;&#x7528;&#x8F85;&#x52A9;&#x6027;&#x65B9;&#x6CD5;">&#x4F7F;&#x7528;&#x8F85;&#x52A9;&#x6027;&#x65B9;&#x6CD5;</h1>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_first_int</span><span class="hljs-params">(values, key, default=<span class="hljs-number">0</span>)</span>:</span>
+
+    found = values.get(key, [<span class="hljs-string">&apos;&apos;</span>])
+    <span class="hljs-keyword">if</span> found[<span class="hljs-number">0</span>]:
+        found = int(found[<span class="hljs-number">0</span>])
+    <span class="hljs-keyword">else</span>:
+        found = default
+    <span class="hljs-keyword">return</span> found
+
+red = get_first_int(my_values, <span class="hljs-string">&apos;red&apos;</span>)
+green = get_first_int(my_values, <span class="hljs-string">&apos;green&apos;</span>)
+opacity = get_first_int(my_values, <span class="hljs-string">&apos;opacity&apos;</span>)
+
+
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Red <span class="hljs-number">5</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Green <span class="hljs-number">0</span>
+<span class="hljs-prompt">&gt;&gt;&gt; </span>Opacity <span class="hljs-number">0</span>
+</code></pre>
+<p>&#x5B8C;&#x7F8E;&#x7684;&#x5448;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#x7684;&#x89E3;&#xFF0C;&#x8FD9;&#x79CD;&#x5C0F;&#x578B;&#x8F85;&#x52A9;&#x6027;&#x65B9;&#x6CD5;&#x5E2E;&#x52A9;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x590D;&#x7528;&#x6027;&#x3002;</p>
+<h1 id="&#x60F3;&#x6CD5;">&#x60F3;&#x6CD5;</h1>
+<p>&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x51E0;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x80FD;&#x7528;<strong>if...else</strong>&#x89E3;&#x51B3;&#x5C11;&#x7528;<strong>or</strong></li>
+<li>&#x5C3D;&#x91CF;&#x628A;<strong>if...else</strong>&#x653E;&#x5230;&#x591A;&#x884C;&#xFF0C;&#x589E;&#x52A0;&#x53EF;&#x8BFB;&#x6027;</li>
+<li>&#x76F8;&#x4F3C;&#x4EE3;&#x7801;&#x5728;&#x91CD;&#x6784;&#x65F6;&#x60F3;&#x60F3;&#x662F;&#x5426;&#x80FD;&#x591F;&#x7528;&#x8F85;&#x52A9;&#x6027;&#x65B9;&#x6CD5;&#x62BD;&#x79BB; </li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../effective-python/item3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Item3"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
