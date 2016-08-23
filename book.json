@@ -1,0 +1,9 @@
+{
+    "plugins": ["toggle-chapters",
+                "disqus"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "flyingjay-1"
+        }
+    }
+}
