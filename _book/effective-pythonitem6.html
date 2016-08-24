@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Effective Python | Talk is cheap, show me the code.</title>
+        <title>Item6 | Talk is cheap, show me the code.</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -45,10 +45,8 @@
         
     
     
-    <link rel="next" href="../effective-python/item1.html" />
     
-    
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../effective-python/item5.html" />
     
 
         <!-- head:end -->
@@ -57,9 +55,9 @@
         <!-- body:start -->
         
     <div class="book"
-        data-level="1"
-        data-chapter-title="Effective Python"
-        data-filepath="effective-python/index.md"
+        data-level="1.6"
+        data-chapter-title="Item6"
+        data-filepath="effective-python/item6.md"
         data-basepath=".."
         data-revision="Wed Aug 24 2016 17:56:34 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -90,7 +88,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="effective-python/index.html">
+        <li class="chapter " data-level="1" data-path="effective-python/index.html">
             
                 
                     <a href="../effective-python/index.html">
@@ -181,7 +179,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="effective-python/item6.html">
+        <li class="chapter active" data-level="1.6" data-path="effective-python/item6.html">
             
                 
                     <a href="../effective-python/item6.html">
@@ -234,11 +232,37 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9AD8;&#x6548;&#x7684;python&#x89E3;&#x8BFB;&#x7248;">&#x9AD8;&#x6548;&#x7684;Python&#x89E3;&#x8BFB;&#x7248;</h1>
-<h2 id="why&#xFF1F;">Why&#xFF1F;</h2>
-<p>&#x89C2;&#x770B;&#x4E86;Pycon2016&#x6709;&#x5173;&#x5982;&#x4F55;&#x91CD;&#x6784;Python&#x4EE3;&#x7801;&#x7684;&#x6F14;&#x8BB2;&#xFF0C;&#x5177;&#x4F53;&#x89C6;&#x9891;&#x89C1;<a href="https://www.youtube.com/watch?v=D_6ybDcU5gc" target="_blank">Refactoring Python: Why and how to restructure your code</a>&#xFF0C;&#x6F14;&#x8BB2;&#x8005;&#x4EE5;&#x53CA;&#x4E66;&#x7684;&#x4F5C;&#x8005;&#x5BF9;&#x4E8E;Python&#x7684;&#x91CD;&#x6784;&#x6709;&#x5F88;&#x591A;&#x7ECF;&#x9A8C;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x754C;&#x6709;&#x672C;&#x4E66;&#x53EB;&#x505A;Refactor&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x672C;&#x4E66;&#x4E3B;&#x8981;&#x9488;&#x5BF9;Java&#x5199;&#x7684;&#x3002;&#x800C;Python&#x81EA;&#x5DF1;&#x6709;&#x5F88;&#x591A;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x8FD9;&#x672C;&#x4E66;&#x582A;&#x79F0;Python&#x754C;&#x7684;Refactor&#x3002;</p>
-<h2 id="what">What?</h2>
-<p>&#x6BCF;&#x5929;&#x4E00;&#x4E2A;&#x5C0F;&#x8282;&#xFF0C;&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x539F;&#x4E66;&#x4E2D;&#x7684;Item&#xFF0C;&#x81EA;&#x5DF1;&#x7528;&#x4E2D;&#x6587;&#x8BE0;&#x91CA;&#x4E00;&#x4E2A;&#x89E3;&#x8BFB;&#x7248;&#x3002;&#x5373;&#x8FBE;&#x5230;&#x81EA;&#x6211;&#x5B66;&#x4E60;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x4E5F;&#x5E0C;&#x671B;&#x4E4B;&#x540E;&#x80FD;&#x5E2E;&#x52A9;&#x5230;&#x4E00;&#x4E9B;&#x670B;&#x53CB;&#x3002;</p>
+                        <h1 id="&#x907F;&#x514D;&#x5728;&#x5217;&#x8868;&#x5207;&#x7247;&#x4E2D;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x7684;&#x53C2;&#x6570;">&#x907F;&#x514D;&#x5728;&#x5217;&#x8868;&#x5207;&#x7247;&#x4E2D;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x7684;&#x53C2;&#x6570;</h1>
+<p>&#x5728;&#x5217;&#x8868;&#x5207;&#x7247;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x5BF9;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x5207;&#x7247;&#xFF1A;</p>
+<p>somelist[start:end:stride]</p>
+<p>stride&#x610F;&#x601D;&#x662F;&#x6BCF;&#x51E0;&#x4E2A;&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#xFF0C;&#x770B;&#x4E0A;&#x53BB;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x522B;&#x8BA8;&#x559C;&#x7684;&#x65B9;&#x6CD5;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x60F3;&#x8981;&#x7684;&#x5207;&#x7247;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python">a = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709;&#x5947;&#x6570;</span>
+a[::<span class="hljs-number">2</span>]
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709;&#x5076;&#x6570;</span>
+a[<span class="hljs-number">1</span>::<span class="hljs-number">2</span>]
+</code></pre>
+<p>&#x4F46;&#x662F;&#x4F7F;&#x7528;stride&#x7ECF;&#x5E38;&#x5E26;&#x6765;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python">x = <span class="hljs-string">b&apos;helloworld&apos;</span>
+y = x[::-<span class="hljs-number">1</span>]
+</code></pre>
+<p>&#x4E0A;&#x6BB5;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E2D;y&#x7684;&#x7ED3;&#x679C;&#x5E94;&#x8BE5;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#xFF1A;&apos;dlrowolleh&apos;, &#x4E5F;&#x5C31;&#x662F;x&#x7684;&#x5012;&#x5E8F;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8868;&#x793A;&#x4E0D;&#x662F;&#x5F88;&#x76F4;&#x89C2;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x5E26;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#xFF1A;</p>
+<pre><code class="lang-python">x[<span class="hljs-number">2</span>::<span class="hljs-number">2</span>]
+x[-<span class="hljs-number">2</span>::-<span class="hljs-number">2</span>]
+x[-<span class="hljs-number">2</span>:<span class="hljs-number">2</span>:-<span class="hljs-number">2</span>]
+x[<span class="hljs-number">2</span>:<span class="hljs-number">2</span>:-<span class="hljs-number">2</span>]
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#x4E0D;&#x662F;&#x4E00;&#x773C;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x628A;stride&#x548C;start, end&#x8054;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x878D;&#x5408;&#x4E86;&#x5F88;&#x591A;&#x903B;&#x8F91;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x83B7;&#x53D6;x&#x4E2D;&#x524D;25&#x4E2A;&#x6570;&#x4E2D;&#x7684;&#x5947;&#x6570;</span>
+x = range(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>)
+<span class="hljs-comment"># &#x5148;&#x83B7;&#x53D6;&#x524D;25&#x4E2A;&#x6570;</span>
+x_25 = x[:<span class="hljs-number">25</span>]
+<span class="hljs-comment"># &#x518D;&#x83B7;&#x53D6;&#x5176;&#x4E2D;&#x7684;&#x5076;&#x6570;</span>
+x_25_even = x_25[::<span class="hljs-number">2</span>]
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x7528;&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#x628A;&#x903B;&#x8F91;&#x62C6;&#x89E3;&#x5F00;&#x6765;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x6E05;&#x6670;&#x3002;</p>
+<h1 id="&#x60F3;&#x6CD5;">&#x60F3;&#x6CD5;</h1>
+<p>&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x559C;&#x6B22;&#x7528;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x5E72;&#x5B8C;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x81EA;&#x6211;&#x611F;&#x89C9;&#x4F1A;&#x5F88;&#x725B;&#x903C;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x5BFC;&#x81F4;&#x5176;&#x4ED6;&#x4EBA;&#x5728;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x65F6;&#x611F;&#x89C9;&#x7279;&#x522B;&#x8D39;&#x52B2;&#x3002;Anyway, Readability Counts!</p>
 
                     
                     </section>
@@ -249,10 +273,8 @@
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../effective-python/item5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Item5"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../effective-python/item1.html" class="navigation navigation-next " aria-label="Next page: Item1"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

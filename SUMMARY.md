@@ -6,3 +6,4 @@
     * [Item3](effective-python/item3.md)
     * [Item4](effective-python/item4.md)
     * [Item5](effective-python/item5.md)
+    * [Item6](effective-python/item6.md)
