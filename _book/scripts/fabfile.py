@@ -6,11 +6,11 @@ env.hosts = ['deploy@115.29.34.177']
 
 
 def prepare():
-    local('git pull')
+    local('git pull origin master')
 
 
 def publish():
     local('gitbook build')
     local('git add . && git commit')
-    local('git push')
+    local('git push origin master')
     run('cd /home/deploy/projects/flyingjay-gitbooks && git pull')
