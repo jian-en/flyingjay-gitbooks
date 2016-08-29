@@ -8,6 +8,8 @@
 
 ## 传说中的yield
 
+有一篇文章写的很好：地址如下：http://intermediatepythonista.com/python-generators
+
 一个简单的生成器函数是这样的：
 
 ```python
