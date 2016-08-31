@@ -1,6 +1,6 @@
 # enumerate比range更好用
 
-最开始学习Python时，大家肯定会对range这个BIF（Built In Function）影响深刻，因为它可以方便地帮助我们生成一个数组。但是习惯了range后，我们经常会写出这样的代码：
+最开始学习Python时，大家肯定会对range这个BIF（Built In Function）印象深刻，因为它可以方便地帮助我们生成一个数组。但是习惯了range后，我们经常会写出这样的代码：
 
 ```python
 for i in range(len(a_list)):
