@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Effective Python | Talk is cheap, show me the code.</title>
+        <title>Item14 | Talk is cheap, show me the code.</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../effective-python/item1.html" />
+    <link rel="next" href="../effective-python/item15.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../effective-python/item13.html" />
     
 
         <!-- head:end -->
@@ -57,9 +57,9 @@
         <!-- body:start -->
         
     <div class="book"
-        data-level="1"
-        data-chapter-title="Effective Python"
-        data-filepath="effective-python/index.md"
+        data-level="1.14"
+        data-chapter-title="Item14"
+        data-filepath="effective-python/item14.md"
         data-basepath=".."
         data-revision="Mon Sep 05 2016 20:16:56 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -90,7 +90,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="effective-python/index.html">
+        <li class="chapter " data-level="1" data-path="effective-python/index.html">
             
                 
                     <a href="../effective-python/index.html">
@@ -301,7 +301,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="effective-python/item14.html">
+        <li class="chapter active" data-level="1.14" data-path="effective-python/item14.html">
             
                 
                     <a href="../effective-python/item14.html">
@@ -369,11 +369,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x9AD8;&#x6548;&#x7684;python&#x89E3;&#x8BFB;&#x7248;">&#x9AD8;&#x6548;&#x7684;Python&#x89E3;&#x8BFB;&#x7248;</h1>
-<h2 id="why&#xFF1F;">Why&#xFF1F;</h2>
-<p>&#x89C2;&#x770B;&#x4E86;Pycon2016&#x6709;&#x5173;&#x5982;&#x4F55;&#x91CD;&#x6784;Python&#x4EE3;&#x7801;&#x7684;&#x6F14;&#x8BB2;&#xFF0C;&#x5177;&#x4F53;&#x89C6;&#x9891;&#x89C1;<a href="https://www.youtube.com/watch?v=D_6ybDcU5gc" target="_blank">Refactoring Python: Why and how to restructure your code</a>&#xFF0C;&#x6F14;&#x8BB2;&#x8005;&#x4EE5;&#x53CA;&#x4E66;&#x7684;&#x4F5C;&#x8005;&#x5BF9;&#x4E8E;Python&#x7684;&#x91CD;&#x6784;&#x6709;&#x5F88;&#x591A;&#x7ECF;&#x9A8C;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x754C;&#x6709;&#x672C;&#x4E66;&#x53EB;&#x505A;Refactor&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x672C;&#x4E66;&#x4E3B;&#x8981;&#x9488;&#x5BF9;Java&#x5199;&#x7684;&#x3002;&#x800C;Python&#x81EA;&#x5DF1;&#x6709;&#x5F88;&#x591A;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x8FD9;&#x672C;&#x4E66;&#x582A;&#x79F0;Python&#x754C;&#x7684;Refactor&#x3002;</p>
-<h2 id="what">What?</h2>
-<p>&#x6BCF;&#x5929;&#x4E00;&#x4E2A;&#x5C0F;&#x8282;&#xFF0C;&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x539F;&#x4E66;&#x4E2D;&#x7684;Item&#xFF0C;&#x81EA;&#x5DF1;&#x7528;&#x4E2D;&#x6587;&#x8BE0;&#x91CA;&#x4E00;&#x4E2A;&#x89E3;&#x8BFB;&#x7248;&#x3002;&#x5373;&#x8FBE;&#x5230;&#x81EA;&#x6211;&#x5B66;&#x4E60;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x4E5F;&#x5E0C;&#x671B;&#x4E4B;&#x540E;&#x80FD;&#x5E2E;&#x52A9;&#x5230;&#x4E00;&#x4E9B;&#x670B;&#x53CB;&#x3002;</p>
+                        <h1 id="&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5B81;&#x53EF;&#x76F4;&#x63A5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E0D;&#x8981;&#x8FD4;&#x56DE;none">&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5B81;&#x53EF;&#x76F4;&#x63A5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E0D;&#x8981;&#x8FD4;&#x56DE;None</h1>
+<p>&#x8FD9;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x79CD;&#x8BBE;&#x8BA1;&#x51FD;&#x6570;&#x7684;&#x7406;&#x5FF5;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x4E2D;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x600E;&#x4E48;&#x5904;&#x7406;&#xFF0C;&#x4E3E;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">division</span><span class="hljs-params">(a, b)</span>:</span>
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-keyword">return</span> a / b
+    <span class="hljs-keyword">except</span> ZeroDivisionError:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x5176;&#x5B9E;&#x662F;&#x628A;&#x6F5C;&#x5728;&#x7684;&#x9519;&#x8BEF;&#x5728;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x6D88;&#x5316;&#x6389;&#x4E86;&#xFF0C;&#x7ED3;&#x679C;&#x5916;&#x5C42;&#x4EE3;&#x7801;&#x7684;&#x903B;&#x8F91;&#x9700;&#x8981;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;None, &#x5982;&#x679C;&#x76F4;&#x63A5;&#x7528;:</p>
+<pre><code class="lang-python">result = division(a, b)
+<span class="hljs-keyword">if</span> result <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>: <span class="hljs-comment"># &#x8FD9;&#x79CD;&#x5199;&#x6CD5;OK</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-comment"># &#x4F46;&#x662F;&#x7ECF;&#x5E38;&#x6211;&#x4EEC;&#x4F1A;&#x5199;&#x6210;&#x8FD9;&#x6837;</span>
+<span class="hljs-keyword">if</span> result:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x662F;&#x540E;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#xFF1A;&#x5982;&#x679C;&#x662F; <strong>division(0, 8)</strong>&#xFF0C;&#x90A3;&#x4E48;&#x7ED3;&#x679C;&#x5C31;&#x662F;0&#xFF0C;&#x6B64;&#x65F6;if result: &#x5C31;&#x4F1A;&#x88AB;&#x8DF3;&#x8FC7;&#x53BB;&#xFF0C;&#x56E0;&#x6B64;None &#x548C; 0&#x5728;&#x4E00;&#x8D77;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x6B67;&#x4E49;&#x3002;</p>
+<h2 id="&#x60F3;&#x6CD5;">&#x60F3;&#x6CD5;</h2>
+<p>&#x90A3;&#x4E48;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#xFF1A;&#x4E0D;&#x8981;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x76F4;&#x63A5;&#x8DD1;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x8BA9;&#x4E0A;&#x5C42;&#x4EE3;&#x7801;&#x6309;&#x7167;&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#x5904;&#x7406;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x7684;&#x5F02;&#x5E38;&#x3002;&#x4F46;&#x662F;&#x9700;&#x8981;&#x5728;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E2D;&#x660E;&#x786E;&#x7684;&#x8BF4;&#x660E;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x5F02;&#x5E38;&#x3002;</p>
 
                     
                     </section>
@@ -384,10 +399,10 @@
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../effective-python/item13.html" class="navigation navigation-prev " aria-label="Previous page: Item13"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../effective-python/item1.html" class="navigation navigation-next " aria-label="Next page: Item1"><i class="fa fa-angle-right"></i></a>
+        <a href="../effective-python/item15.html" class="navigation navigation-next " aria-label="Next page: Item15"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
