@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Item7 | Talk is cheap, show me the code.</title>
+        <title>Item17 | Talk is cheap, show me the code.</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -45,10 +45,8 @@
         
     
     
-    <link rel="next" href="../effective-python/item8.html" />
     
-    
-    <link rel="prev" href="../effective-python/item6.html" />
+    <link rel="prev" href="../effective-python/item16.html" />
     
 
         <!-- head:end -->
@@ -57,9 +55,9 @@
         <!-- body:start -->
         
     <div class="book"
-        data-level="1.7"
-        data-chapter-title="Item7"
-        data-filepath="effective-python/item7.md"
+        data-level="1.17"
+        data-chapter-title="Item17"
+        data-filepath="effective-python/item17.md"
         data-basepath=".."
         data-revision="Wed Sep 07 2016 20:08:29 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -196,7 +194,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="effective-python/item7.html">
+        <li class="chapter " data-level="1.7" data-path="effective-python/item7.html">
             
                 
                     <a href="../effective-python/item7.html">
@@ -346,7 +344,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="effective-python/item17.html">
+        <li class="chapter active" data-level="1.17" data-path="effective-python/item17.html">
             
                 
                     <a href="../effective-python/item17.html">
@@ -399,34 +397,66 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x7528;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F;&#x66FF;&#x4EE3;map-filter&#x65B9;&#x6CD5;">&#x7528;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F;&#x66FF;&#x4EE3;map, filter&#x65B9;&#x6CD5;</h1>
-<p>Python&#x901A;&#x8FC7;&#x501F;&#x9274;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#xFF0C;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x601D;&#x60F3;&#x3002;map, filter&#x5C31;&#x662F;&#x4E24;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x65E2;&#x53EF;&#x4EE5;&#x7528;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F;&#xFF0C;&#x53C8;&#x53EF;&#x4EE5;&#x7528;map&#xFF0C;filter&#x65F6;&#x3002;&#x6211;&#x4EEC;&#x6539;&#x9009;&#x62E9;&#x54EA;&#x4E00;&#x4E2A;&#x5462;&#xFF1F;</p>
-<h2 id="&#x95EE;&#x9898;&#x5B9E;&#x4F8B;">&#x95EE;&#x9898;&#x5B9E;&#x4F8B;</h2>
-<h3 id="&#x95EE;&#x9898;&#x4E00;">&#x95EE;&#x9898;&#x4E00;</h3>
-<p>&#x6C42;&#x4E00;&#x7EC4;&#x6570;&#x7684;&#x5E73;&#x65B9;&#x6570;:</p>
-<pre><code class="lang-python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
-squares = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> a]
-print(squares)
+                        <h1 id="&#x904D;&#x5386;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;">&#x904D;&#x5386;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;</h1>
+<p>&#x76F4;&#x63A5;&#x4E0A;&#x6765;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5427;</p>
+<h2 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;">&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h2>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x7EC4;&#x6570;&#x636E;&#xFF0C;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5360;&#x603B;&#x6570;&#x7684;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;&#x7ED9;&#x5B9A;&#x7684;&#x662F;&#x4E2D;&#x56FD;&#x6BCF;&#x4E00;&#x4E2A;&#x7701;&#x4E00;&#x5E74;&#x7684;GDP&#x6570;&#x91CF;&#xFF0C;&#x8FD4;&#x56DE;&#x6BCF;&#x4E2A;&#x7701;GDP&#x7684;&#x5360;&#x6BD4;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5E38;&#x89C1;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">normalize</span><span class="hljs-params">(numbers)</span>:</span>
+    total = sum(numbers)  <span class="hljs-comment"># &#x6C42;&#x548C;</span>
+    result = []
+    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> numbers:
+        percent = <span class="hljs-number">100</span> * value / total  <span class="hljs-comment"># &#x5206;&#x522B;&#x8BA1;&#x7B97;&#x6BCF;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x5360;&#x6BD4;&#xFF0C;&#x5982;&#x679C;&#x662F;python2&#x9700;&#x8981;&#x7528;100.0</span>
+    <span class="hljs-keyword">return</span> result
 </code></pre>
-<pre><code class="lang-python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
-squares = map(<span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>, a)
-print(squares)
+<p>&#x6211;&#x4EEC;&#x628A;&#x95EE;&#x9898;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x53D8;&#x5927;&#xFF0C;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x8FD9;&#x4E2A;&#x4E16;&#x754C;&#x6240;&#x6709;&#x57CE;&#x5E02;&#x7684;GDP&#x6570;&#x91CF;&#xFF0C;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x5176;&#x5360;&#x6BD4;&#x3002;&#x90A3;&#x4E48;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x81EA;&#x7136;&#x8054;&#x60F3;&#x5230;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;&#x7684;&#xFF1A;&#x4F7F;&#x7528;generator&#x751F;&#x6210;&#x5668;&#x3002;&#x597D;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x8F7D;&#x5165;&#x6570;&#x636E;&#xFF0C;yield&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_gdps</span><span class="hljs-params">(data_path)</span>:</span>
+    <span class="hljs-keyword">with</span> open(data_path) <span class="hljs-keyword">as</span> f:
+        <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+            <span class="hljs-keyword">yield</span> int(line)
+
+it = read_gdps(<span class="hljs-string">&apos;world_cities_gdp.txt&apos;</span>)
+percentages = normalize(it)
+print(percentages)
+
+&gt;&gt;&gt;
+[]
 </code></pre>
-<h3 id="&#x95EE;&#x9898;&#x4E8C;">&#x95EE;&#x9898;&#x4E8C;</h3>
-<p>&#x6211;&#x4EEC;&#x63A5;&#x7740;&#x5217;&#x4E3E;&#xFF0C;&#x6C42;&#x540C;&#x6837;&#x8FD9;&#x7EC4;&#x6570;&#x4E2D;&#x7684;&#x5076;&#x6570;&#x7684;&#x5E73;&#x65B9;&#x6570;:</p>
-<pre><code class="lang-python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
-even_squares = [x ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> a <span class="hljs-keyword">if</span> x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
-print(even_squares)
+<p>&#x5F88;&#x5947;&#x602A;&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x7A7A;&#x5462;&#xFF1F;&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x751F;&#x6210;&#x5668;&#x5BF9;&#x8C61;&#x5176;&#x5B9E;&#x662F;stateful&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x904D;&#x5386;&#x4E00;&#x6B21;&#x5C31;&#x4E0D;&#x80FD;&#x518D;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x4E86;&#x3002;sum()&#x51FD;&#x6570;&#x5C06;&#x5176;&#x904D;&#x5386;&#x4E00;&#x6B21;&#xFF0C;&#x7136;&#x540E;&#x7528;<strong>for</strong>&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x81EA;&#x7136;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x503C;&#x3002;&#x600E;&#x4E48;&#x6539;&#x8FDB;&#x5462;&#xFF1F;</p>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x76F4;&#x63A5;&#x628A;&#x751F;&#x6210;&#x5668;&#x904D;&#x5386;&#x4E00;&#x6B21;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;:</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">normalize</span><span class="hljs-params">(numbers)</span>:</span>
+    numbers = list(numbers) <span class="hljs-comment"># &#x7528;list&#x5C06;generater&#x8F6C;&#x6210;list&#x5BF9;&#x8C61;</span>
+    total = sum(numbers)
+    .....
 </code></pre>
-<pre><code class="lang-python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
-even_squares = map(<span class="hljs-keyword">lambda</span> x: x ** <span class="hljs-number">2</span>, filter(<span class="hljs-keyword">lambda</span> x: x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>, a))
-print(even_squares)
+<p>&#x4E0A;&#x8FF0;&#x65B9;&#x6848;&#x5176;&#x5B9E;&#x8FD8;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x90A3;&#x4E2A;&#x6839;&#x672C;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x4F9D;&#x7136;&#x4F1A;&#x5C06;&#x5927;&#x91CF;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6848;, &#x4F20;&#x5165;&#x51FD;&#x6570;&#x6765;&#x4E0D;&#x65AD;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Iterator&#x5BF9;&#x8C61;:</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">normalize_func</span><span class="hljs-params">(get_iter)</span>:</span>
+    total = sum(get_iter())  <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;</span>
+    result = []
+    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> get_iter():  <span class="hljs-comment"># &#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;</span>
+        percent = <span class="hljs-number">100</span> * value / total
+        result.append(percent)
+
+percentages = normalize_func(<span class="hljs-keyword">lambda</span>: read_gdps(path))  <span class="hljs-comment"># &#x4F20;&#x5165;&#x51FD;&#x6570;</span>
 </code></pre>
-<p>&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x660E;&#x663E;&#x53EF;&#x4EE5;&#x611F;&#x89C9;&#x5230;map, filter&#x5199;&#x8D77;&#x6765;&#x6709;&#x70B9;&#x8D39;&#x8111;&#x5B50;&#xFF0C;&#x56E0;&#x4E3A;&#x5D4C;&#x5957;&#x6BD4;&#x8F83;&#x591A;&#x3002;&#x800C;&#x7B49;&#x4EF7;&#x7684;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F;&#x505A;&#x6CD5;&#x5374;&#x5F88;&#x5E72;&#x51C0;&#xFF0C;&#x6E05;&#x723D;&#x3002;</p>
-<h2 id="&#x62D3;&#x5C55;">&#x62D3;&#x5C55;</h2>
-<p>&#x5176;&#x5B9E;dictionary, set&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x63A8;&#x5BFC;&#x5F0F;&#xFF0C;&#x628A;<strong>[]</strong>&#x6539;&#x6210;<strong>{}</strong>&#x5C31;&#x597D;&#x3002;</p>
+<p>&#x5F15;&#x5165;&#x4E86;lambda&#x7684;&#x5199;&#x6CD5;&#x4E0D;&#x662F;&#x5F88;&#x4F18;&#x96C5;, &#x5176;&#x5B9E;&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;&#x7684;&#x534F;&#x8BAE;&#x5236;&#x5B9A;&#x76F8;&#x5E94;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x6848;:</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReadGdps</span><span class="hljs-params">(object)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, data_path)</span>:</span>
+        self.data_path = data_path
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__iter__</span><span class="hljs-params">(self)</span>:</span>   <span class="hljs-comment">#  protocol &#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;</span>
+        <span class="hljs-keyword">with</span> open(self.data_path) <span class="hljs-keyword">as</span> f:
+            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+                <span class="hljs-keyword">yield</span> line
+
+gdps = ReadGdps(path)
+percentages = normalize(gdps)
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x65B9;&#x5F0F;&#x76F4;&#x63A5;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;&#xFF0C;&#x4F20;&#x5165;&#x540E;&#x6BCF;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x3002;</p>
 <h2 id="&#x60F3;&#x6CD5;">&#x60F3;&#x6CD5;</h2>
-<p>map, filter&#x867D;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x5F15;&#x5165;&#x4E86;lambda&#x8FD9;&#x6837;&#x7684;&#x566A;&#x97F3;&#x3002;&#x76F4;&#x63A5;&#x4E0A;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F;&#x5C31;&#x597D;!</p>
+<p>&#x904D;&#x5386;&#x5927;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x7528;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x7528;&#x7C7B;&#x5199;&#x6CD5;&#x66F4;&#x52A0;&#x6613;&#x8BFB;&#x4E14;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#x3002;</p>
 
                     
                     </section>
@@ -437,10 +467,8 @@ print(even_squares)
         </div>
 
         
-        <a href="../effective-python/item6.html" class="navigation navigation-prev " aria-label="Previous page: Item6"><i class="fa fa-angle-left"></i></a>
+        <a href="../effective-python/item16.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Item16"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../effective-python/item8.html" class="navigation navigation-next " aria-label="Next page: Item8"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
