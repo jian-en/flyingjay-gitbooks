@@ -18,3 +18,4 @@
     * [Item15](effective-python/item15.md)
     * [Item16](effective-python/item16.md)
     * [Item17](effective-python/item17.md)
+    * [Item18](effective-python/item18.md)
