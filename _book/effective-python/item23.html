@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Item11 | Talk is cheap, show me the code.</title>
+        <title>Item23 | Talk is cheap, show me the code.</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../effective-python/item12.html" />
+    <link rel="next" href="../effective-python/item24.html" />
     
     
-    <link rel="prev" href="../effective-python/item10.html" />
+    <link rel="prev" href="../effective-python/item22.html" />
     
 
         <!-- head:end -->
@@ -57,9 +57,9 @@
         <!-- body:start -->
         
     <div class="book"
-        data-level="1.11"
-        data-chapter-title="Item11"
-        data-filepath="effective-python/item11.md"
+        data-level="1.23"
+        data-chapter-title="Item23"
+        data-filepath="effective-python/item23.md"
         data-basepath=".."
         data-revision="Tue Sep 20 2016 20:34:01 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -256,7 +256,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.11" data-path="effective-python/item11.html">
+        <li class="chapter " data-level="1.11" data-path="effective-python/item11.html">
             
                 
                     <a href="../effective-python/item11.html">
@@ -436,7 +436,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.23" data-path="effective-python/item23.html">
+        <li class="chapter active" data-level="1.23" data-path="effective-python/item23.html">
             
                 
                     <a href="../effective-python/item23.html">
@@ -504,35 +504,43 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x4F7F;&#x7528;zip&#x6765;&#x5E76;&#x884C;&#x5730;&#x5904;&#x7406;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;">&#x4F7F;&#x7528;zip&#x6765;&#x5E76;&#x884C;&#x5730;&#x5904;&#x7406;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</h1>
-<h2 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;">&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h2>
-<p>&#x5148;&#x63CF;&#x8FF0;&#x4E00;&#x4E0B;&#x95EE;&#x9898;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x6837;&#x4E00;&#x7EC4;&#x6570;&#x636E;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x6C42;&#x5F97;&#x6700;&#x5927;&#x7684;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x4EE5;&#x53CA;&#x5185;&#x5BB9;&#xFF1A;</p>
-<pre><code class="lang-python">names = [<span class="hljs-string">&apos;hello&apos;</span>, <span class="hljs-string">&apos;fujianhaha&apos;</span>, <span class="hljs-string">&apos;a&apos;</span>]
+                        <h1 id="&#x51FD;&#x6570;&#x662F;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#xFF1A;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x53C2;&#x6570;">&#x51FD;&#x6570;&#x662F;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#xFF1A;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x53C2;&#x6570;</h1>
+<p>&#x8BB8;&#x591A;Python&#x5185;&#x7F6E;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x652F;&#x6301;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF0C;&#x6BD4;&#x5982;<strong>sort</strong>:</p>
+<pre><code class="lang-python">names = [<span class="hljs-string">&apos;Galeo&apos;</span>, <span class="hljs-string">&apos;fujian&apos;</span>, <span class="hljs-string">&apos;Fe&apos;</span>]
+names.sort(key=<span class="hljs-keyword">lambda</span> x: len(x))
+print(names)
+&gt;&gt;&gt;
+[<span class="hljs-string">&apos;Fe&apos;</span>, <span class="hljs-string">&apos;Galeo&apos;</span>, <span class="hljs-string">&apos;fujian&apos;</span>]
 </code></pre>
-<h2 id="&#x95EE;&#x9898;&#x5206;&#x6790;">&#x95EE;&#x9898;&#x5206;&#x6790;</h2>
-<p>&#x6211;&#x4EEC;&#x65E2;&#x7136;&#x6BD4;&#x8F83;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x6784;&#x5EFA;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6765;&#x8BB0;&#x5F55;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#xFF1A;</p>
-<pre><code class="lang-python">letters = [len(n) <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> names]
+<p>Python&#x4E2D;&#x51FD;&#x6570;&#x662F;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x76F4;&#x63A5;&#x51FD;&#x6570;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x7528;lambda&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x518D;&#x4E3E;&#x4E00;&#x5217;&#xFF1A;</p>
+<p>defaultdict &#x8FD9;&#x4E2A;&#x542B;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#x5B57;&#x5178;&#xFF0C;&#x4E5F;&#x4F1A;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">log_missing</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;Key added&apos;</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+
+current = {<span class="hljs-string">&apos;green&apos;</span>: <span class="hljs-number">12</span>, <span class="hljs-string">&apos;blue&apos;</span>: <span class="hljs-number">3</span>}
+
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+result = defaultdict(log_missing, current)
+print(result[<span class="hljs-string">&apos;green&apos;</span>])
+print(result[<span class="hljs-string">&apos;gre&apos;</span>])
+
+&gt;&gt;&gt;
+<span class="hljs-number">12</span>
+Key added
+<span class="hljs-number">0</span>
 </code></pre>
-<p>&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x6709;&#x4E00;&#x4E2A;&#x6C42;&#x89E3;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code class="lang-python">longest_name = <span class="hljs-keyword">None</span>
-max_letters = <span class="hljs-number">0</span>
-<span class="hljs-keyword">for</span> i, name <span class="hljs-keyword">in</span> enumerate(names):
-    count = letters[i]
-    <span class="hljs-keyword">if</span> count &gt; max_letters:
-        max_letters = count
-        longest_name = name
-</code></pre>
-<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x867D;&#x7136;&#x8FD8;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x591F;&#x7B80;&#x4ECB;&#xFF0C;&#x5F15;&#x5165;zip&#x4E4B;&#x540E;&#xFF1A;</p>
-<pre><code class="lang-python">longest_name = <span class="hljs-keyword">None</span>
-max_letters = <span class="hljs-number">0</span>
-<span class="hljs-keyword">for</span> name, count <span class="hljs-keyword">in</span> zip(names, letters):
-    <span class="hljs-keyword">if</span> count &gt; max_letters:
-        longest_name = name
-        max_letters = count
-</code></pre>
-<p>&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5E76;&#x884C;&#x5904;&#x7406;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x662F;&#x7B80;&#x4ECB;&#x800C;&#x6E05;&#x695A;&#x7684;&#x3002;&#x8FD9;&#x8FB9;&#x5C24;&#x5176;&#x6CE8;&#x610F;&#xFF0C;Python2&#x4E2D;&#x7684;zip&#x548C;Python3&#x4E2D;&#x7684;zip&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x3002;Python2&#x4E2D;&#x7684;zip&#x4F1A;&#x76F4;&#x63A5;&#x6C42;&#x51FA;&#x7ED3;&#x679C;&#xFF0C;&#x800C;python3&#x4E2D;&#x7684;zip&#x751F;&#x6210;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x66F4;&#x8282;&#x7701;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x5728;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x952E;&#x503C;&#x7684;&#x65F6;&#x5019;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x4F20;&#x9012;&#x7684;&#x51FD;&#x6570;&#x662F;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x60F3;&#x8BB0;&#x5F55;&#x5230;&#x5E95;&#x6709;&#x591A;&#x5C11;&#x952E;&#x503C;&#x4E0D;&#x5B58;&#x5728;&#xFF1F;&#x4E5F;&#x5C31;&#x662F;&#x4FDD;&#x7559;&#x76F8;&#x5E94;&#x72B6;&#x6001;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x6709;&#x8FD9;&#x4E48;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li><p>&#x628A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x53D8;&#x6210;&#x95ED;&#x5305;&#x51FD;&#x6570;&#xFF0C;&#x7528;<strong>nonlocal</strong>&#x5C06;&#x8BA1;&#x6570;&#x5668;&#x66B4;&#x9732;&#x51FA;&#x6765;&#xFF1B;</p>
+</li>
+<li><p>&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x7C7B;&#x4E2D;&#x53EF;&#x4EE5;&#x4FDD;&#x7559;&#x8FD9;&#x6837;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x628A;&#x7C7B;&#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x7ED9;defaultdict&#xFF1B;</p>
+</li>
+<li><p>&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5728;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;<strong><strong>call</strong></strong>&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x7C7B;&#x5B9E;&#x4F8B;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F20;&#x5165;&#xFF1B;</p>
+</li>
+</ol>
 <h2 id="&#x60F3;&#x6CD5;">&#x60F3;&#x6CD5;</h2>
-<p>zip&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5C0F;&#x5DE7;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x7279;&#x522B;&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x76F8;&#x5173;&#x6027;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x884C;&#x6267;&#x884C;&#x4F1A;&#x6E05;&#x695A;&#x5F88;&#x591A;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x662F;&#x4E00;&#x7B49;&#x516C;&#x6C11;&#xFF0C;&#x4F20;&#x9012;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x662F;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x65E0;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8BB0;&#x5F55;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x6539;&#x4E3A;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x6216;&#x8005;&#x7C7B;&#x51FD;&#x6570;&#x3002;</p>
 
                     
                     </section>
@@ -543,10 +551,10 @@ max_letters = <span class="hljs-number">0</span>
         </div>
 
         
-        <a href="../effective-python/item10.html" class="navigation navigation-prev " aria-label="Previous page: Item10"><i class="fa fa-angle-left"></i></a>
+        <a href="../effective-python/item22.html" class="navigation navigation-prev " aria-label="Previous page: Item22"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../effective-python/item12.html" class="navigation navigation-next " aria-label="Next page: Item12"><i class="fa fa-angle-right"></i></a>
+        <a href="../effective-python/item24.html" class="navigation navigation-next " aria-label="Next page: Item24"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -22,4 +22,7 @@
     * [Item19](effective-python/item19.md)
     * [Item20](effective-python/item20.md)
     * [Item21](effective-python/item21.md)
+    * [Item22](effective-python/item22.md)
+    * [Item23](effective-python/item23.md)
+    * [Item24](effective-python/item24.md)
     
